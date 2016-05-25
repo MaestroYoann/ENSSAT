@@ -1,0 +1,2 @@
+<salutation> Bonjour </salutation>
+"Hello !"
