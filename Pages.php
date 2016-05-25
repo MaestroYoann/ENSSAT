@@ -1,0 +1,18 @@
+<?php
+class Pages extends CI_Controller {
+	public function display($page ='home')
+	{
+		if ( ! file_exists('application/views/'.$page.'.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		
+		$data['title'] = ucfirst($page); // Capitalize the first letter
+
+		$this->load->view('header',$data);
+		$this->load->view($page, $data);
+		$this->load->view('footer', $data);
+	}
+}
+?>
